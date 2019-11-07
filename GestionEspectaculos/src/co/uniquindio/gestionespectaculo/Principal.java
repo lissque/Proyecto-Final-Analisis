@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class Principal extends Application {
 	private Stage escenarioPrincipal;
 	private Evento miEvento;
+	//HOLA
 
 	public static void main(String[] args) {
 		launch(args);
