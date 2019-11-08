@@ -29,7 +29,7 @@ public class Principal extends Application {
 		this.escenarioPrincipal.setTitle("Gestion de Evento");
 		mostrarVistaPrincipal();
 	}
-	
+		
 	public void mostrarVistaCrearNuevoAdmin () {
 		try
 		{
