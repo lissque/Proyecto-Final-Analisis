@@ -1,12 +1,47 @@
 package co.uniquindio.gestionespectaculos.model;
 
-public enum Seccion {
-	CLUB_FANS,
-	PLATEA_1,
-	PLATEA_2,
-	SEGUNDO_PISO_1,
-	SEGUNDO_PISO_2,
-	SEGUNDO_PISO_3,
-	SEGUNDO_PISO_4,
-	SEGUNDO_PISO_5;
+public class Seccion {
+
+	private Puesto[][] matrizPuestos;
+	private TipoSeccion tipoSeccion;
+
+	public Seccion(TipoSeccion tipoSeccion) {
+		matrizPuestos = new Puesto[10][10];
+		inicializarMatrizPuestos();
+		this.tipoSeccion = tipoSeccion;
+	}
+
+	public Puesto[][] getMatrizPuestos() {
+		return matrizPuestos;
+	}
+
+	public void setMatrizPuestos(Puesto[][] matrizPuestos) {
+		this.matrizPuestos = matrizPuestos;
+	}
+
+	public TipoSeccion getTipoSeccion() {
+		return tipoSeccion;
+	}
+
+	public void setTipoSeccion(TipoSeccion tipoSeccion) {
+		this.tipoSeccion = tipoSeccion;
+	}
+
+	public void inicializarMatrizPuestos() {
+
+		char letra = 'A';
+
+		for (int i = 0; i < matrizPuestos.length; i++) {
+			for (int j = 0; j < matrizPuestos[0].length; j++) {
+
+				matrizPuestos[i][j] = new Puesto(EstadoPuesto.LIBRE, letra, j, this);
+
+			}
+			letra++;
+			if (letra > 'Z') {
+				letra = 'A';
+			}
+		}
+	}
+
 }

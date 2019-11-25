@@ -1,20 +1,22 @@
 package co.uniquindio.gestionespectaculos.model;
 
 public class Tiquete {
-	
+
 	private Cliente miCliente;
-	private Seccion seccion;
+	private TipoSeccion seccion;
 	private char fila;
 	private int asiento;
 	private double precio;
-	
-	public Tiquete(Cliente miCliente, Seccion seccion, char fila, int asiento, double precio) {
+	private Puesto puesto;
+
+	public Tiquete(Cliente miCliente, TipoSeccion seccion, char fila, int asiento, double precio, Puesto puesto) {
 		super();
 		this.miCliente = miCliente;
 		this.seccion = seccion;
 		this.fila = fila;
 		this.asiento = asiento;
 		this.precio = precio;
+		this.puesto = puesto;
 	}
 
 	public Cliente getMiCliente() {
@@ -25,11 +27,11 @@ public class Tiquete {
 		this.miCliente = miCliente;
 	}
 
-	public Seccion getSeccion() {
+	public TipoSeccion getSeccion() {
 		return seccion;
 	}
 
-	public void setSeccion(Seccion seccion) {
+	public void setSeccion(TipoSeccion seccion) {
 		this.seccion = seccion;
 	}
 
@@ -56,6 +58,13 @@ public class Tiquete {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	
-	
+
+	public Puesto getPuesto() {
+		return puesto;
+	}
+
+	public void setPuesto(Puesto puesto) {
+		this.puesto = puesto;
+	}
+
 }
